@@ -32,6 +32,7 @@ button {
 .header-container{
     width: 100%;
     position: relative;
+    margin-bottom: 150px;
 }
 
 #top-div{
@@ -100,6 +101,7 @@ h2{
     width: 160px;
     border: none;
     font-size: 14px; 
+    background-color: var(--white);
 }
 
 #bottom-div{

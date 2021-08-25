@@ -27,6 +27,11 @@ a{
 
 button {
     cursor: pointer;
+    
+    font-size: 14px; 
+    background-color: var(--white);
+    border-radius: 4px;
+    padding: 12px 16px;
 }
 
 .header-container{
@@ -96,16 +101,80 @@ h2{
 }
 
 .button-link{
-    border-radius: 4px;
-    padding: 12px 16px;
     width: 160px;
     border: none;
-    font-size: 14px; 
-    background-color: var(--white);
 }
 
 #bottom-div{
     width: 100%;
     height: 200px;
     background-color: var(--dark-gray);
+}
+
+main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content-right{
+    width: 50%;
+    max-width: 520px;
+    margin-right: 80px;
+}
+h3{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+p{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+form{
+    width: 50%;
+    max-width: 340px;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+}
+
+.field-radio{
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label{
+    margin-bottom: 7px;
+    font-size: 12px;
+}
+.label-radio{
+    margin-bottom: 0;
+}
+#register-first-name, #register-email, #register-cpf{
+    height: 30px;
+    margin-bottom: 20px;
+}
+#register-male, #register-female{
+ 
+    margin-right: 5px;
+}
+
+#register-female{
+    margin-left: 40px;
+}
+
+.btn-submit{
+    border: 1px solid var(--dark-gray);
+    font-size: 16px;
+    transition: .3s;
+    padding: 10px 16px;
+}
+
+.btn-submit:hover{
+    opacity: .7;
 }

@@ -34,7 +34,7 @@
         </div>
     </section>
     <main>
-        <div>
+        <div class="main-content-right">
             <h3>Ajude o algorítimo a ser mais certeiro</h3>
             <div>
                 <p>
@@ -67,8 +67,8 @@
                     <input type="text" id="register-cpf" name="cpf" \ pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" \>
                   </div>
                   <div class="field field-radio">
-                    <input type="radio" name="sexo" id="resgister-male"><label for="register-male">Masculino</label>
-                    <input type="radio" name="sexo" id="resgister-female"><label for="register-female">Feminino</label> 
+                    <input type="radio" name="sexo" id="register-male"><label class="label-radio" for="register-male">Masculino</label>
+                    <input type="radio" name="sexo" id="register-female"><label class="label-radio" for="register-female">Feminino</label> 
                   </div>
                   <div class="field field-submit">
                     <button class="btn-action btn-submit" type="submit">
@@ -76,8 +76,15 @@
                     </button>
                   </div>
             </form>
-            
-      
     </main>
+    <div id="products-container">
+        
+    </div>
+   
+        <button class="btn-action btn-submit" type="button">
+            Ainda mais produtos aqui!
+        </button>
+      
+    <script src="script.js"></script>
 </body>
 </html>

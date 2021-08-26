@@ -34,7 +34,8 @@
         </div>
     </section>
     <main>
-        <div class="main-content-right">
+        <div class="main-top">
+            <div class="main-content-right">
             <h3>Ajude o algorítimo a ser mais certeiro</h3>
             <div>
                 <p>
@@ -53,38 +54,67 @@
             </div>
         </div>
       
-            <form >
+            <form id="user-form" onsubmit="submitUserMainForm(event)">
                 <div class="field">
                     <label for="register-first-name">Seu nome:</label>
-                    <input type="text" id="register-first-name" name="first_name">
+                    <input type="text" id="register-first-name" name="first_name" required>
+                    
                   </div>
                   <div class="field">
                     <label for="register-email">Email:</label>
-                    <input type="email" id="register-email" name="email">
+                    <input type="email" id="register-email" name="email" required>
                   </div>
                   <div class="field">
                     <label for="register-cpf">CPF:</label>
-                    <input type="text" id="register-cpf" name="cpf" \ pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" \>
+                    <input type="text" id="register-cpf" name="cpf" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" required>
+                    <span id="validate-cpf"></span>
                   </div>
                   <div class="field field-radio">
-                    <input type="radio" name="sexo" id="register-male"><label class="label-radio" for="register-male">Masculino</label>
-                    <input type="radio" name="sexo" id="register-female"><label class="label-radio" for="register-female">Feminino</label> 
+                    <input type="radio" name="gender" id="register-male" value="Masculino"><label class="label-radio" for="register-male">Masculino</label>
+                    <input type="radio" name="gender" id="register-female" value="Feminino"><label class="label-radio" for="register-female">Feminino</label> 
                   </div>
                   <div class="field field-submit">
-                    <button class="btn-action btn-submit" type="submit">
+                    <button class="btn-submit" type="submit">
                       Enviar
                     </button>
                   </div>
             </form>
-    </main>
-    <div id="products-container">
-        
-    </div>
+        </div>
+
+         <div class="main-center">
+        <div id="products-container">
+            <h3 class="subtitle">Sua seleção especial</h3>
+        </div>
    
-        <button class="btn-action btn-submit" type="button">
+        <button id="loadMore" class="btn-submit" type="button" onclick="loadMoreProducts()">
             Ainda mais produtos aqui!
         </button>
-      
+        </div>
+
+        <div class="main-bottom">
+            <h3 class="subtitle">Compartilhe a novidade</h3>
+            <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
+            <form id="friend-form">
+                <div class="field-container">
+                   <div class="field field-friend-name">
+                    <label for="register-friend-name">Nome do seu amigo:</label>
+                    <input type="text" id="register-friend-name" name="friend_name">
+                  </div>
+                  <div class="field field-friend-email">
+                    <label for="register-friend-email">Email:</label>
+                    <input type="email" id="register-friend-email" name="friend_email">
+                  </div> 
+                </div>
+                  <div class="field field-submit">
+                    <button class="btn-action btn-submit" type="submit">
+                      Enviar agora
+                    </button>
+                  </div>
+            </form>
+        </div>
+    </main>
+   
+    <script src="validateCpf.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

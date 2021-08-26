@@ -1,3 +1,4 @@
+/* --------global------------ */
 * {
     margin: 0;
     padding: 0;
@@ -34,6 +35,17 @@ button {
     padding: 12px 16px;
 }
 
+.subtitle{
+    position: absolute;
+    padding: 0 5px;
+    background-color: var(--white);
+    margin: 0;
+    top: -12px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 18px;
+}
+/* -----------header section---------- */
 .header-container{
     width: 100%;
     position: relative;
@@ -54,7 +66,7 @@ button {
 
 #top-content{
     -webkit-transform: skew(-5deg); /* Chrome, Opera */
-      -ms-transform: skew(-5deg); /* IE */
+    -ms-transform: skew(-5deg); /* IE */
     transform: skewY(-5deg) ;
     display: flex;
     flex-direction: column;
@@ -111,7 +123,13 @@ h2{
     background-color: var(--dark-gray);
 }
 
+/* -------------main content------------ */
 main{
+    width: 100%;
+}
+
+/* -------------algorithm form------------ */
+.main-top{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -132,7 +150,7 @@ p{
     font-size: 14px;
     margin-bottom: 20px;
 }
-form{
+#user-form{
     width: 50%;
     max-width: 340px;
 }
@@ -177,4 +195,80 @@ label{
 
 .btn-submit:hover{
     opacity: .7;
+}
+
+/* ------------products section--------------- */
+.main-center{
+    width: 100%;
+    text-align: center;
+    
+}
+#products-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 940px;
+    justify-content: center;
+    margin: 50px auto;
+    gap: 40px;
+    border-top: 1px solid var(--dark-gray);
+    position: relative;
+    padding-top: 50px;
+}
+
+.products-content{
+    max-width: 200px;
+}
+
+.product-image{
+    width: 100%;
+}
+
+.image{
+    width: 100%;
+}
+
+h1{
+    font-size: 16px;
+}
+
+.btn-buy{
+    width: 100%;
+    border: 1px solid var(--dark-gray);
+    padding: 6px 0;
+    font-size: 16px;
+
+}
+
+/* --------send to a friend ------------*/
+
+.main-bottom{
+    width: 940px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--dark-gray);
+    position: relative;
+    padding-top: 50px;
+}
+
+.field-container{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#register-friend-name, #register-friend-email{
+    height: 30px;
+    width: 340px;
+}
+.field-friend-name{
+    margin-right: 20px;
+}
+.field-friend-email{
+    margin-left: 20px;
+}
+
+.btn-action{
+    width: 260px;
+    align-self: center;
 }

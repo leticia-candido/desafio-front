@@ -1,50 +1,4 @@
-/* --------global------------ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-:root {
-    --white: #FFF;
-    --light-gray: #00000029;
-    --medium-gray: #888888;
-    --dark-gray: #707070; 
-  }
-
-  body, input, textarea, button {
-    font-family: Helvetica, sans-serif;
-    color: var(--dark-gray);
-
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: Helvetica, sans-serif;
-}
-
-a{
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-    
-    font-size: 14px; 
-    background-color: var(--white);
-    border-radius: 4px;
-    padding: 12px 16px;
-}
-
-.subtitle{
-    position: absolute;
-    padding: 0 5px;
-    background-color: var(--white);
-    margin: 0;
-    top: -12px;
-    left: 50%;
-    transform: translate(-50%);
-    font-size: 18px;
-}
 /* -----------header section---------- */
 .header-container{
     width: 100%;
@@ -114,7 +68,7 @@ h2{
 
 .button-link{
     width: 160px;
-    border: none;
+    border: 1px solid var(--dark-gray);
 }
 
 #bottom-div{
@@ -128,7 +82,7 @@ main{
     width: 100%;
 }
 
-/* -------------algorithm form------------ */
+/* -------------user form------------ */
 .main-top{
     display: flex;
     width: 100%;
@@ -197,6 +151,11 @@ label{
     opacity: .7;
 }
 
+#validate-cpf{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
 /* ------------products section--------------- */
 .main-center{
     width: 100%;
@@ -208,7 +167,7 @@ label{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 940px;
     justify-content: center;
-    margin: 50px auto;
+    margin: 100px auto 50px;
     gap: 40px;
     border-top: 1px solid var(--dark-gray);
     position: relative;
@@ -226,9 +185,28 @@ label{
 .image{
     width: 100%;
 }
-
+.product-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 h1{
     font-size: 16px;
+    text-align: left;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.description, .old-price, .price, .installments{
+    text-align: left;
+}
+.old-price, .price{
+    margin-bottom: 5px;
+}
+.description{
+    margin-bottom: 10px;
+}
+.price{
+    font-weight: bold;
 }
 
 .btn-buy{
@@ -243,7 +221,7 @@ h1{
 
 .main-bottom{
     width: 940px;
-    margin: 50px auto;
+    margin: 100px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -254,7 +232,13 @@ h1{
 
 .field-container{
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
+}
+
+#friend-form-msg{
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 13px;
 }
 
 #register-friend-name, #register-friend-email{
@@ -272,3 +256,185 @@ h1{
     width: 260px;
     align-self: center;
 }
+
+/* ---------Footer---------- */
+
+footer{
+    position: relative;
+    width: 100%;
+    margin-top: 150px;
+}
+#footer-top{
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    background-color: var(--dark-gray);
+    height: 150px;
+    -webkit-transform: skew(-5deg); /* Chrome, Opera */
+      -ms-transform: skew(-5deg); /* IE */
+     transform: skewY(-5deg) ; 
+}
+#footer-content{
+    -webkit-transform: skew(5deg); /* Chrome, Opera */
+      -ms-transform: skew(5deg); /* IE */
+     transform: skewY(5deg) ; 
+     text-align: center;
+}
+
+#paragraph-footer-1, #paragraph-footer-2, #paragraph-footer-3{
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+#footer-bottom{
+    background-color: var(--dark-gray);
+    height: 180px;
+    width: 100%;
+    
+}
+
+/* ---------mobile------------- */
+
+@media (min-width: 426px) and (max-width: 1023px){
+    #products-container{
+        width: 100%;
+    }
+    .main-bottom{
+        width: 100%;
+    }
+    .main-content-right{
+        margin-right: 40px;
+    }
+    #user-form{
+        max-width: 320px;
+    }
+    .top-link {
+        margin-right: 20px;
+    }
+ }
+
+
+@media (max-width: 425px) { 
+    .header-container{
+        margin-bottom: 200px;
+    }
+
+    #top-content{
+        align-items: flex-start;
+    }
+
+    #paragraph-1, #paragraph-2, h2{
+        padding-left: 16px;
+        padding-right: 45px;
+    }
+   
+    #top-buttons {
+    
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    width: initial;
+    align-self: center;
+      
+    }
+
+    .main-top{
+        flex-direction: column;
+        padding: 0 16px;
+    }
+
+    .main-content-right{
+        width: 100%;
+        margin-right: 0;
+        max-width: initial;
+    }
+
+    #user-form{
+        width: 100%;
+        max-width: initial;
+    }
+
+    .top-link, .top-link:last-child{
+        margin:10px;
+    }
+
+    #products-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0;
+        column-gap: 0;
+    }
+    .description{
+        display: none;
+    }
+    .main-bottom{
+        width: 100%;
+        margin: 50px 0;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .field-container {
+        flex-direction: column;
+    }
+    .field-friend-name, .field-friend-email  {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .field-friend-name{
+        margin-bottom: 20px;
+    }
+    .products-content{
+        display: flex;
+        max-width: initial;
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .product-image{
+        width: 40%;
+        margin-right: 10px;
+    }
+
+    .product-content{
+        width: 60%;
+        margin-left: 10px;
+        
+    }
+    .subtitle{
+        width: 60%;
+        text-align: center;
+        padding: 0;
+    }
+
+    #register-friend-name, #register-friend-email {
+        width: 100%;
+    }
+
+    #friend-form{
+        width: 100%;
+    }
+   
+}
+
+@media (max-width: 344px) { 
+    .button-link{
+        width: 140px;
+        padding: 12px;
+    }
+    h2{
+        font-size: 32px;
+        padding-right: 0;
+    }
+
+    .subtitle{
+        width: 70%;
+    }
+}
+
+

@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio Linx</title>
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <section class="header-container">
@@ -70,11 +72,11 @@
                     <span id="validate-cpf"></span>
                   </div>
                   <div class="field field-radio">
-                    <input type="radio" name="gender" id="register-male" value="Masculino"><label class="label-radio" for="register-male">Masculino</label>
+                    <input type="radio" checked name="gender" id="register-male" value="Masculino"><label class="label-radio" for="register-male">Masculino</label>
                     <input type="radio" name="gender" id="register-female" value="Feminino"><label class="label-radio" for="register-female">Feminino</label> 
                   </div>
                   <div class="field field-submit">
-                    <button class="btn-submit" type="submit">
+                    <button id="user-form-submit" class="btn-submit" type="submit">
                       Enviar
                     </button>
                   </div>
@@ -86,7 +88,7 @@
             <h3 class="subtitle">Sua seleção especial</h3>
         </div>
    
-        <button id="loadMore" class="btn-submit" type="button" onclick="loadMoreProducts()">
+        <button id="loadMore" class="btn-action btn-submit" type="button" onclick="loadMoreProducts()">
             Ainda mais produtos aqui!
         </button>
         </div>
@@ -94,25 +96,37 @@
         <div class="main-bottom">
             <h3 class="subtitle">Compartilhe a novidade</h3>
             <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
-            <form id="friend-form">
+            <form id="friend-form" onsubmit="submitFriendForm(event)">
                 <div class="field-container">
                    <div class="field field-friend-name">
                     <label for="register-friend-name">Nome do seu amigo:</label>
-                    <input type="text" id="register-friend-name" name="friend_name">
+                    <input type="text" id="register-friend-name" name="friend_name" required>
                   </div>
                   <div class="field field-friend-email">
                     <label for="register-friend-email">Email:</label>
-                    <input type="email" id="register-friend-email" name="friend_email">
+                    <input type="email" id="register-friend-email" name="friend_email" required>
                   </div> 
                 </div>
                   <div class="field field-submit">
-                    <button class="btn-action btn-submit" type="submit">
+                    <span id="friend-form-msg"></span>
+                    <button id="friend-form-submit" class="btn-action btn-submit" type="submit">
                       Enviar agora
                     </button>
                   </div>
             </form>
         </div>
     </main>
+    <footer>
+      <div id="footer-top">
+        <div id="footer-content">
+            <p id="paragraph-footer-1">Testando suas habilidades em HTML, CSS e JS. </p>
+            <p id="paragraph-footer-2">Linx Impulse</p>
+            <p id="paragraph-footer-3">2019</p>
+        </div>
+    </div>
+    <div id="footer-bottom">
+    </div>
+    </footer>
    
     <script src="validateCpf.js"></script>
     <script src="script.js"></script>

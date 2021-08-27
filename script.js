@@ -1,12 +1,38 @@
 
 let _nextPage = "frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1";
 
+let userMainForm = {
+    name:"",
+    email:"",
+    cpf:"",
+    gender:"",
+}
+let userFriendForm = {
+    name:"",
+    email:"",
+}
+
+// after page loads will show the products 
+window.onload = async function onPageLoad(){
+    loadMoreProducts();
+}
+
+/**
+ * Get Products
+ * Fetch API for products and returns it as JSON
+ * @returns JSON product list
+ */
 async function getProducts(){
     const result = await fetch(`https://${_nextPage}`);
     return result.json();
 };
 
-//build product card
+/**
+ * Product Card
+ * Render product card html based on given product
+ * @param {Object} product 
+ * @returns html string
+ */
 function productCard(product){
     let currencyBrOldPrice = product.oldPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     let currencyBrPrice = product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
@@ -26,6 +52,11 @@ function productCard(product){
     `
 }
 
+/**
+ * Load More Products
+ * Fetch the product list on the API and renders it on DOM
+ * @returns void
+ */
 async function loadMoreProducts(){
 
     if (_nextPage === null) {
@@ -45,22 +76,12 @@ async function loadMoreProducts(){
     });
 }
 
-// after page loads will show the products 
-window.onload = async function onPageLoad(){
-    loadMoreProducts();
-}
-
-let userMainForm = {
-    name:"",
-    email:"",
-    cpf:"",
-    gender:"",
-}
-let userFriendForm = {
-    name:"",
-    email:"",
-}
-
+/**
+ * Submit User Main Form 
+ * Validates and gets the inputed data from user main form and submit it
+ * @param {DOM Event} event 
+ * @returns void
+ */
 function submitUserMainForm(event){
     event.preventDefault();
 
@@ -90,6 +111,12 @@ function submitUserMainForm(event){
     });
 }
 
+/**
+ * Submit Friend Form 
+ * Validates and gets the inputed data from friend form and submit it, only after user main form is filled.
+ * @param {DOM Event} event 
+ * @returns void
+ */
 function submitFriendForm(event){
     event.preventDefault();
 
